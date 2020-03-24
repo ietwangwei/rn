@@ -1,11 +1,28 @@
 /* eslint-disable react-native/no-inline-styles */
 import * as React from 'react'
-import {View, StyleSheet} from 'react-native'
-import Icon from 'react-native-vector-icons/FontAwesome'
-import {Input} from 'react-native-elements'
+import {View, StyleSheet, Text} from 'react-native'
+import {Button} from 'antd-mobile-rn'
 
-function LoginScreen({navigation}) {
-  return <View style={styles.loginPage}>This is Login</View>
+export default class Login extends React.Component {
+  state = {
+    userAccount: '123',
+    password: '123',
+  }
+  render() {
+    return (
+      <View style={styles.loginPage}>
+        <Button
+          type="primary"
+          size={'large'}
+          style={{margin: 16}}
+          onClick={() => {
+            this.toLogin()
+          }}>
+          登陆
+        </Button>
+      </View>
+    )
+  }
 }
 
 const styles = StyleSheet.create({
@@ -15,6 +32,10 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     padding: 16,
   },
+  formItem: {
+    flex: 1,
+  },
+  formInput: {
+    width: 200,
+  },
 })
-
-export default LoginScreen
