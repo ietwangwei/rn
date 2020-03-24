@@ -6,6 +6,9 @@ import LoginScreen from './src/screens/login'
 const Stack = createStackNavigator({
   Login: {
     screen: LoginScreen,
+    navigationOptions: {
+      headerShown: false,
+    },
   },
 })
 
